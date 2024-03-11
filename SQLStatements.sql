@@ -191,3 +191,11 @@ values
 (21,'11', '51', NOW()),
 (22,'11', '49', NOW())
 
+
+--see if you can use imdb developer api
+insert into movies_detail (movieid,moviedescription,averagerating,review,yearadded)
+values
+(1,'Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.','','',NOW()),
+(2,'In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before the Nazis can obtain its awesome powers.','','',NOW()),
+(3,'A young police officer must prevent a bomb exploding aboard a city bus by keeping its speed above 50 mph.','','',NOW())
+
