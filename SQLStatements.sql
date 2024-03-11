@@ -52,7 +52,7 @@ alter table UserMoviesSaved
 ADD CONSTRAINT FK_mn2
 FOREIGN KEY (MovieID) REFERENCES Movies (MovieID);
 
-insert into users (UserID,UserName,Password)
+insert into users (UserName,Password)
 values
 ('BarryAllen', 'TheFlash!10'),
 ('OliverQueen', 'GreenArrow!20'),
@@ -129,41 +129,40 @@ values
 ('The Incredibles'),
 ('Ted')
 
-
-insert into UserMoviesSaved (UserMovieSavedId,UserName,MovieName,DateMovieSaved)
+insert into UserMoviesSaved (UserId, MovieId,DateMovieSaved)
 values
-(1,'BarryAllen', 'Jaws', NOW()),
-(2,'BarryAllen', 'Heat', NOW()),
-(3,'BarryAllen', 'Modern Times', NOW()),
-(4,'BarryAllen', 'No Country For Old Men', NOW()),
-(5,'BarryAllen', 'Ted', NOW()),
-(6,'BarryAllen', 'Modern Times', NOW()),
-(7,'BarryAllen', 'Eternal Sunshine Of The Spotless Mind', NOW()),
-(8,'BarryAllen', 'Bridesmaids', NOW()),
-(9,'StevenStrange', 'Jaws', NOW()),
-(10,'StevenStrange', 'Heat', NOW()),
-(11,'StevenStrange', 'Persepolis', NOW()),
-(12,'StevenStrange', 'Airplane', NOW()),
-(13,'StevenStrange', 'La La Land', NOW()),
-(14,'StevenStrange', 'Rservoir Dogs', NOW()),
-(15,'StevenStrange', 'Eternal Sunshine Of The Spotless Mind', NOW()),
-(16,'StevenStrange', 'Moonlight', NOW()),
-(17,'ScarletWitch', 'Get Out', NOW()),
-(18,'ScarletWitch', 'Heat', NOW()),
-(19,'ScarletWitch', 'Brokeback Mountain', NOW()),
-(20,'ScarletWitch', 'Airplane', NOW()),
-(21,'ScarletWitch', 'La La Land', NOW()),
-(22,'ScarletWitch', 'Reservoir Dogs', NOW()),
-(23,'ScarletWitch', 'The Blair Witch Project', NOW()),
-(24,'ScarletWitch', 'Gravity', NOW()),
-(25,'DianaPrince', 'La La Land', NOW()),
-(26,'DianaPrince', 'Speed', NOW()),
-(27,'DianaPrince', 'The Blair Witch Project', NOW()),
-(28,'DianaPrince', 'Inception', NOW()),
-(29,'NickFury', 'La La Land', NOW()),
-(30,'NickFury', 'The Social Network', NOW()),
-(31,'NickFury', 'The Blair Witch Project', NOW()),
-(32,'NickFury', 'Mad Max', NOW())
+('1', '18', NOW()),
+('1', '34', NOW()),
+('1', '26', NOW()),
+('1', '5', NOW()),
+('1', '51', NOW()),
+('1', '26', NOW()),
+('1', '33', NOW()),
+('1', '38', NOW()),
+('14', '18', NOW()),
+('14', '34', NOW()),
+('14', '48', NOW()),
+('14', '28', NOW()),
+('14', '43', NOW()),
+('14', '23', NOW()),
+('14', '33', NOW()),
+('14', '42', NOW()),
+('8', '44', NOW()),
+('8', '34', NOW()),
+('8', '30', NOW()),
+('8', '28', NOW()),
+('8', '43', NOW()),
+('8', '23', NOW()),
+('8', '31', NOW()),
+('8', '35', NOW()),
+('19', '43', NOW()),
+('19', '3', NOW()),
+('19', '31', NOW()),
+('19', '15', NOW()),
+('11', '43', NOW()),
+('11', '22', NOW()),
+('11', '31', NOW()),
+('11', '29', NOW())
 
 
 
