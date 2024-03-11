@@ -166,29 +166,28 @@ values
 
 
 
-insert into UserMoviesWatched (UserMovieWatchedId,UserName,MovieName,DateMovieWatched)
+insert into UserMoviesWatched (UserMovieWatchedId,UserId, movieId, DateMovieWatched)
 values
-(1,'BarryAllen', 'Persepolis', NOW()),
-(2,'BarryAllen', 'Airplane', NOW()),
-(3,'BarryAllen', 'Moonlight', NOW()),
-(4,'StevenStrange', 'The Incredibles', NOW()),
-(5,'StevenStrange', 'Manchester By The Sea', NOW()),
-(6,'StevenStrange', 'Star Wars', NOW()),
-(7,'DickGrayson', 'Get Out', NOW()),
-(8,'DickGrayson', 'Heat', NOW()),
-(9,'DickGrayson', 'Memento', NOW()),
-(10,'DickGrayson', 'Inception', NOW()),
-(11,'DickGrayson', 'La La Land', NOW()),
-(12,'DickGrayson', 'Reservoir Dogs', NOW()),
-(13,'DickGrayson', 'The Blair Witch Project', NOW()),
-(14,'DickGrayson', 'Gravity', NOW()),
-(15,'TonyStark', 'La La Land', NOW()),
-(16,'TonyStark', 'Speed', NOW()),
-(17,'TonyStark', 'The Blair Witch Project', NOW()),
-(18,'TonyStark', 'Inception', NOW()),
-(19,'NickFury', 'Oceans 11', NOW()),
-(20,'NickFury', 'Parasite', NOW()),
-(21,'NickFury', 'Ted', NOW()),
-(22,'NickFury', 'Paddington', NOW())
-
+(1,'1', '48', NOW()),
+(2,'1', '28', NOW()),
+(3,'1', '42', NOW()),
+(4,'14', '50', NOW()),
+(5,'14', '39', NOW()),
+(6,'14', '19', NOW()),
+(7,'20', '6', NOW()),
+(8,'20', '24', NOW()),
+(9,'20', '10', NOW()),
+(10,'20', '16', NOW()),
+(11,'20', '11', NOW()),
+(12,'20', '14', NOW()),
+(13,'20', '7', NOW()),
+(14,'20', '2', NOW()),
+(15,'3', '11', NOW()),
+(16,'3', '5', NOW()),
+(17,'3', '7', NOW()),
+(18,'3', '16', NOW()),
+(19,'11', '40', NOW()),
+(20,'11', '37', NOW()),
+(21,'11', '51', NOW()),
+(22,'11', '49', NOW())
 
