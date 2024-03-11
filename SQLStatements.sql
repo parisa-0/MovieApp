@@ -1,18 +1,18 @@
 create database MovieApp;
 
-CREATE TABLE Users (
-    UserID int primary key auto_increment,
+CREATE TABLE user (
+    UserID bigint primary key auto_increment,
     UserName varchar(255),
     Password varchar(255)
 );
 
 CREATE TABLE Movies (
-    MovieID int primary key auto_increment,
+    MovieID bigint primary key auto_increment,
     MovieName varchar(255)
 );
 
 CREATE TABLE Movies_Detail (
-    MovieID int primary key,
+    MovieID bigint primary key,
     MovieDescription carchar(255),
     AverageRating varchar(255),
     Review varchar(255),
@@ -22,23 +22,24 @@ CREATE TABLE Movies_Detail (
 
 CREATE TABLE UserMoviesWatched (
     UserMovieWatchedID int primary key auto_increment,
-    UserID int,
+    UserID bigint,
     MovieID int,
     DateMovieWatched datetime
 );
 
 alter table UserMoviesWatched
 ADD CONSTRAINT FK_un2
-FOREIGN KEY (UserID) REFERENCES Users (UserID);
+FOREIGN KEY (UserID) REFERENCES User (UserID);
 
 alter table UserMoviesWatched
 ADD CONSTRAINT FK_mn
 FOREIGN KEY (MovieID) REFERENCES Movies (MovieID);
 
 
+
 CREATE TABLE UserMoviesSaved (
     UserMovieSavedID int primary key auto_increment,
-    UserID int,
+    UserID bigint,
     MovieID int,
     DateMovieSaved datetime
 );
@@ -46,7 +47,7 @@ CREATE TABLE UserMoviesSaved (
 
 alter table UserMoviesSaved
 ADD CONSTRAINT FK_un3
-FOREIGN KEY (UserID) REFERENCES Users (UserID);
+FOREIGN KEY (UserID) REFERENCES User (UserID);
 
 alter table UserMoviesSaved
 ADD CONSTRAINT FK_mn2
