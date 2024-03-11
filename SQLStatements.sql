@@ -1,3 +1,5 @@
+create database MovieApp;
+
 CREATE TABLE Users (
     UserID int primary key auto_increment,
     UserName varchar(255),
