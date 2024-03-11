@@ -7,23 +7,25 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Movies (
-	MovieID int primary key auto_increment,
-    MovieName varchar(255),
+    MovieID int primary key auto_increment,
+    MovieName varchar(255)
+);
+
+CREATE TABLE Movies_Detail (
+    MovieID int primary key,
+    MovieDescription carchar(255),
     AverageRating varchar(255),
     Review varchar(255),
     YearAdded datetime
 );
-
-
+	
 
 CREATE TABLE UserMoviesWatched (
-	UserMovieWatchedID int primary key auto_increment,
-    UserID varchar(255),
-    MovieID varchar(255),
+    UserMovieWatchedID int primary key auto_increment,
+    UserID int,
+    MovieID int,
     DateMovieWatched datetime
 );
-
-
 
 alter table UserMoviesWatched
 ADD CONSTRAINT FK_un2
@@ -35,12 +37,11 @@ FOREIGN KEY (MovieID) REFERENCES Movies (MovieID);
 
 
 CREATE TABLE UserMoviesSaved (
-	UserMovieSavedID int primary key auto_increment,
-    UserID varchar(255),
-    MovieID varchar(255),
+    UserMovieSavedID int primary key auto_increment,
+    UserID int,
+    MovieID int,
     DateMovieSaved datetime
 );
-
 
 
 alter table UserMoviesSaved
@@ -51,31 +52,28 @@ alter table UserMoviesSaved
 ADD CONSTRAINT FK_mn2
 FOREIGN KEY (MovieID) REFERENCES Movies (MovieID);
 
-
-
-
 insert into users (UserID,UserName,Password)
 values
-(1,'BarryAllen', 'TheFlash!10'),
-(2,'OliverQueen', 'GreenArrow!20'),
-(3,'TonyStark', 'IronMan!30'),
-(4,'ClarkKent', 'Superman!40'),
-(5,'PeterParker', 'Spiderman!5'),
-(6,'BruceWayne', 'Batman!14'),
-(7,'CharlesXavier', 'ProfX!39'),
-(8,'ScarletWitch', 'Witch!30'),
-(9,'SteveRogers', 'CaptainAmerica!32'),
-(10,'CarolDanvers', 'Mavel!13'),
-(11,'NickFury', 'Leader!20'),
-(12,'KaraZorEl', 'Supergirl!11'),
-(13,'Tchalla', 'BlackPanther!17'),
-(14,'StevenStrange', 'DrStrange!98'),
-(15,'ClintBarton', 'HawkEye!19'),
-(16,'RyanReynolds', 'GreenLantern!70'),
-(17,'BruceBanner', 'Hulk!50'),
-(18,'Logan', 'Wolverine!60'),
-(19,'DianaPrince', 'WonderWoman!100'),
-(20,'DickGrayson', 'Robin!10')
+('BarryAllen', 'TheFlash!10'),
+('OliverQueen', 'GreenArrow!20'),
+('TonyStark', 'IronMan!30'),
+('ClarkKent', 'Superman!40'),
+('PeterParker', 'Spiderman!5'),
+('BruceWayne', 'Batman!14'),
+('CharlesXavier', 'ProfX!39'),
+('ScarletWitch', 'Witch!30'),
+('SteveRogers', 'CaptainAmerica!32'),
+('CarolDanvers', 'Mavel!13'),
+('NickFury', 'Leader!20'),
+('KaraZorEl', 'Supergirl!11'),
+('Tchalla', 'BlackPanther!17'),
+('StevenStrange', 'DrStrange!98'),
+('ClintBarton', 'HawkEye!19'),
+('RyanReynolds', 'GreenLantern!70'),
+('BruceBanner', 'Hulk!50'),
+('Logan', 'Wolverine!60'),
+('DianaPrince', 'WonderWoman!100'),
+('DickGrayson', 'Robin!10')
 
 insert into movies (MovieName)
 values
