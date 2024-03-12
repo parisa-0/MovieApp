@@ -11,7 +11,7 @@ CREATE TABLE Movies (
     MovieName varchar(255)
 );
 
-CREATE TABLE Movies_Detail (
+CREATE TABLE moviesdetail (
     MovieID bigint primary key,
     MovieDescription carchar(255),
     AverageRating varchar(255),
@@ -20,23 +20,23 @@ CREATE TABLE Movies_Detail (
 );
 	
 
-CREATE TABLE UserMoviesWatched (
+CREATE TABLE usermovieswatched (
     usermoviewatchedid bigint primary key auto_increment,
     userid bigint,
     movieid bigint,
     datemoviewatched datetime
 );
 
-alter table UserMoviesWatched
+alter table usermovieswatched
 ADD CONSTRAINT FK_un
 FOREIGN KEY (userid) REFERENCES User (userid);
 
-alter table UserMoviesWatched
+alter table usermovieswatched
 ADD CONSTRAINT FK_mn
 FOREIGN KEY (movieid) REFERENCES Movies (movieid);
 
 
-CREATE TABLE UserMoviesSaved (
+CREATE TABLE usermoviessaved (
     UserMovieSavedID int primary key auto_increment,
     UserID bigint,
     MovieID int,
