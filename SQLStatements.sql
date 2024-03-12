@@ -21,20 +21,19 @@ CREATE TABLE Movies_Detail (
 	
 
 CREATE TABLE UserMoviesWatched (
-    UserMovieWatchedID int primary key auto_increment,
-    UserID bigint,
-    MovieID int,
-    DateMovieWatched datetime
+    usermoviewatchedid bigint primary key auto_increment,
+    userid bigint,
+    movieid bigint,
+    datemoviewatched datetime
 );
 
 alter table UserMoviesWatched
-ADD CONSTRAINT FK_un2
-FOREIGN KEY (UserID) REFERENCES User (UserID);
+ADD CONSTRAINT FK_un
+FOREIGN KEY (userid) REFERENCES User (userid);
 
 alter table UserMoviesWatched
 ADD CONSTRAINT FK_mn
-FOREIGN KEY (MovieID) REFERENCES Movies (MovieID);
-
+FOREIGN KEY (movieid) REFERENCES Movies (movieid);
 
 
 CREATE TABLE UserMoviesSaved (
