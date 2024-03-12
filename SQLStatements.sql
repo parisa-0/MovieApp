@@ -37,19 +37,19 @@ FOREIGN KEY (movieid) REFERENCES Movies (movieid);
 
 
 CREATE TABLE usermoviessaved (
-    UserMovieSavedID int primary key auto_increment,
-    UserID bigint,
-    MovieID int,
-    DateMovieSaved datetime
+    usermoviesavedid int primary key auto_increment,
+    userid bigint,
+    movieid bigint,
+    datemoviesaved datetime
 );
 
 
-alter table UserMoviesSaved
-ADD CONSTRAINT FK_un3
+alter table usermoviessaved
+ADD CONSTRAINT FK_un2
 FOREIGN KEY (UserID) REFERENCES User (UserID);
 
-alter table UserMoviesSaved
-ADD CONSTRAINT FK_mn2
+alter table usermoviessaved
+ADD CONSTRAINT FK_mn3
 FOREIGN KEY (MovieID) REFERENCES Movies (MovieID);
 
 insert into users (UserName,Password)
