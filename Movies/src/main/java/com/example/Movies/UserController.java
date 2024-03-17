@@ -22,15 +22,9 @@ public class UserController {
         return "UserIndex";
     }
 
-    @RequestMapping("/delete/{userID}")
-    public String deleteUser(@PathVariable(name = "userID") int userID) {
-        service.delete(userID);
-        return "redirect:/vhp";
-    }
-
     @RequestMapping("edit/{id}")
     public ModelAndView showEditUserPage(@PathVariable(name = "userID") int userID) {
-        ModelAndView mav = new ModelAndView("new");
+        ModelAndView mav = new ModelAndView("UserNew");
         User user = service.get(userID);
         mav.addObject("user", user);
         return mav;
@@ -43,13 +37,61 @@ public class UserController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveStudent(@ModelAttribute("user") User user) {
+    public String saveUser(@ModelAttribute("user") User user) {
         service.save(user);
+        return "redirect:/vhp";
+    }
+
+    @RequestMapping("/close")
+    public String deleteUser(@PathVariable(name = "userID") int userID) {
+        service.delete(userID);
         return "redirect:/vhp";
     }
 
 
 
+    @RequestMapping(value = "showLoggedInUser", method = RequestMethod.GET)
+    public ModelAndView showLoggedInUser(@RequestParam(name = "username") String username,
+                                         @RequestParam(name = "password") String password) {
+        ModelAndView mav = new ModelAndView("UserIndex");
+        List<User> listUser = service.findName(username, password);
+        //if listuser is empty
 
+        if(listUser.isEmpty()) {
+
+        }
+        else {
+            mav.addObject("listUser", listUser);
+        }
+        return mav;
+      //  return "UserIndex";
+    }
+
+ /*
+
+    @RequestMapping("/showLoggedInUser")
+    public ModelAndView showLoggedInUser() {
+        ModelAndView mav = new ModelAndView("UserIndex");
+        List<User> listUser = service.findName("BarryAllen", "TheFlash!10");
+        System.out.println("Get / list name 2" + listUser);
+        mav.addObject("listUser", listUser);
+        return mav;
+    }
+*/
+    @GetMapping("/new2")
+    public String logUser(Model model) {
+        model.addAttribute("user", new User());
+        return "UserNew2";
+    }
+
+
+
+    @GetMapping("/findName")
+    public String findName(Model model) {
+        List<User> listUser = service.findName("BarryAllen", "TheFlash!10");
+        model.addAttribute("listUser", listUser);
+        System.out.println("Get / list name 2" + listUser);
+        return "UserIndex";
+    }
 }
 
