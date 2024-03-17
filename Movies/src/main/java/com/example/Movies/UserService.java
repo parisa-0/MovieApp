@@ -11,6 +11,11 @@ public class UserService {
     @Autowired
     private UserRepository repo;
 
+    public List<User> findName(String username, String password) {
+        List<User> users = repo.findName(username, password);
+        return users;
+    }
+
     public List<User> listAll() {
         return (List<User>) repo.findAll();
     }
@@ -23,11 +28,8 @@ public class UserService {
         return repo.findById(userID).get();
     }
 
+
     public void delete(long userID) {
         repo.deleteById(userID);
     }
-
-
-
-
 }
